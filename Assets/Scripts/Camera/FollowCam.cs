@@ -13,6 +13,7 @@ public class FollowCam : MonoBehaviour
     
     protected Vector3 velocity;
     protected Vector3 offset;
+
     
     public void Start()
     {

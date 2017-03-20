@@ -45,7 +45,6 @@ public class Pickup : MonoBehaviour
 
         if ( type == PickupType.Consumable )
         {
-
 			Destroy( gameObject );
         }
         else
@@ -54,7 +53,8 @@ public class Pickup : MonoBehaviour
             //we look in the children in case we have one nested.
             if ( type == PickupType.HiddenOnPickup )
             {
-                Destroy( GetComponentInChildren<SpriteRenderer>() );
+                
+				Destroy( GetComponentInChildren<SpriteRenderer>() );
             }
 
             //we don't need our collider or physics anymore

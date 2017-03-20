@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
+
 //this is something that can get Pickups. Pretty clear, right?
 //if something without one of these passes over a Pickup, nothing happens.
 //should the trigger handler have been here instead of in the Pickup?
@@ -10,6 +12,9 @@ public class PickupGetter : MonoBehaviour
     protected List<Pickup> pickups;
 
     protected Dictionary<string,int> pickupCountLookup;
+
+	public Animator animator;
+
 
     public virtual void Awake()
     {
@@ -21,8 +26,11 @@ public class PickupGetter : MonoBehaviour
     {
         if ( !pickup.isConsumable )
         {
-            pickups.Add( pickup );
             
+			animator.SetTrigger( "pickup" );
+
+			pickups.Add( pickup );
+
             //increment our count since we just picked one up
             pickupCountLookup[ pickup.id ] = GetPickupCount( pickup.id ) + 1;
         }

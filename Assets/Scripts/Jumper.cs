@@ -51,6 +51,7 @@ public class Jumper : MonoBehaviour {
 
 	public void OnCollisionEnter(Collision other)
 	{
+
 		if (jumping) 
 		{
 			agent.enabled = true;

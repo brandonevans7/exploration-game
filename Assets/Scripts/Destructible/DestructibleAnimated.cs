@@ -31,18 +31,18 @@ public class DestructibleAnimated : Destructible
     {
 		Animator animator = GetComponent<Animator>();
 
-//		if ( Time.time - lastTimeHurt < invincibilityTime && amount < 0.0f )
-//        {
+		if (  amount < 0.0f )
+        {
 			if ( animator != null )
 			{
 				animator.SetTrigger( "hurt" );
 			}
 
-//			lastTimeHurt = Time.time;
+
 
 			//this calls the regular ModifyHitPoints in Destructible
 			base.ModifyHitPoints( amount );
-//        }
+        }
 
 
 

@@ -9,7 +9,7 @@ public class Destructible : MonoBehaviour
     public float maximumHitPoints = 100.0f;
     public float invincibilityTime = 0.5f;
 
-    public float lastTimeHurt;
+    private float lastTimeHurt;
     
     public virtual float hitPoints
     {

@@ -706,7 +706,15 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 1
+        functionName: PickupDone
+        data: 
+        objectReferenceParameter: {fileID: 1322456678778350, guid: eb172b3f43a8b46e99a434cca2f3f46c,
+          type: 2}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1

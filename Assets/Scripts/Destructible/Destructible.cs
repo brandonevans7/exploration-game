@@ -9,7 +9,7 @@ public class Destructible : MonoBehaviour
     public float maximumHitPoints = 100.0f;
     public float invincibilityTime = 0.5f;
 
-    protected float lastTimeHurt;
+    public float lastTimeHurt;
     
     public virtual float hitPoints
     {
@@ -51,7 +51,8 @@ public class Destructible : MonoBehaviour
 
         hitPoints += amount;
         hitPoints = Mathf.Min( hitPoints, maximumHitPoints );
-        
+		lastTimeHurt = Time.time;
+
         if ( hitPoints <= 0.0f )
         {
             Die();

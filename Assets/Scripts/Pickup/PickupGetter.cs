@@ -1,7 +1,10 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(NavMeshAgent))]
 
 //this is something that can get Pickups. Pretty clear, right?
 //if something without one of these passes over a Pickup, nothing happens.
@@ -10,6 +13,8 @@ public class PickupGetter : MonoBehaviour
 {
     //we'll keep track of every Pickup we've gotten, unless they're consumable
     protected List<Pickup> pickups;
+
+	public NavMeshAgent agent;
 
     protected Dictionary<string,int> pickupCountLookup;
 
@@ -28,6 +33,7 @@ public class PickupGetter : MonoBehaviour
         {
             
 			animator.SetTrigger( "pickup" );
+			agent.enabled = false;
 
 			pickups.Add( pickup );
 
@@ -45,4 +51,8 @@ public class PickupGetter : MonoBehaviour
         }
         return pickupCountLookup[ pickupId ];
     }
+	public virtual void PickupDone()
+	{
+		agent.enabled = true;
+	}
 }

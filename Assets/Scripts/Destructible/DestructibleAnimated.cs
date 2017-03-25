@@ -29,17 +29,24 @@ public class DestructibleAnimated : Destructible
     //we can play animations.
     public override void ModifyHitPoints( float amount )
     {
-        if ( amount < 0.0f )
-        {
-            Animator animator = GetComponent<Animator>();
-            if ( animator != null )
-            {
-                animator.SetTrigger( "hurt" );
-            }
-        }
+		Animator animator = GetComponent<Animator>();
 
-        //this calls the regular ModifyHitPoints in Destructible
-        base.ModifyHitPoints( amount );
+//		if ( Time.time - lastTimeHurt < invincibilityTime && amount < 0.0f )
+//        {
+			if ( animator != null )
+			{
+				animator.SetTrigger( "hurt" );
+			}
+
+//			lastTimeHurt = Time.time;
+
+			//this calls the regular ModifyHitPoints in Destructible
+			base.ModifyHitPoints( amount );
+//        }
+
+
+
+        
     }
 
     //when we die, we DON'T always call our base's Die() function,

@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Downloads\Campfire\Script\FireLightScript.cs" />
      <Compile Include="Assets\Downloads\Gems Ultimate Pack\Scripts\AnimationScript.cs" />
+     <Compile Include="Assets\Scripts\AnimationOnTrigger.cs" />
      <Compile Include="Assets\Scripts\Camera\FollowCam.cs" />
      <Compile Include="Assets\Scripts\Camera\GameGUI.cs" />
      <Compile Include="Assets\Scripts\ClickToMove.cs" />
@@ -55,11 +56,13 @@
      <Compile Include="Assets\Scripts\Destructible\DestructibleAnimated.cs" />
      <Compile Include="Assets\Scripts\Destructible\Destructor.cs" />
      <Compile Include="Assets\Scripts\Destructible\EnemyDestructor.cs" />
+     <Compile Include="Assets\Scripts\FirstPersonAgentController.cs" />
      <Compile Include="Assets\Scripts\Game\Game.cs" />
      <Compile Include="Assets\Scripts\Jumper.cs" />
      <Compile Include="Assets\Scripts\LocomotionSimpleAgent.cs" />
      <Compile Include="Assets\Scripts\LookAt.cs" />
      <Compile Include="Assets\Scripts\MovementAnimatorUpdater.cs" />
+     <Compile Include="Assets\Scripts\NavMeshPatroller.cs" />
      <Compile Include="Assets\Scripts\Pickup\Pickup.cs" />
      <Compile Include="Assets\Scripts\Pickup\PickupGetter.cs" />
      <Compile Include="Assets\Scripts\Pickup\PickupHealth.cs" />

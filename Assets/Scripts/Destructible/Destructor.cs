@@ -6,10 +6,10 @@ public class Destructor : MonoBehaviour
     public float damageAmount = 1;
 
     //remember, Unity calls this whenever there is a collision
-    public void OnCollisionEnter(Collision collision)
+    public void OnTriggerEnter(Collider collision)
     {
         //this looks confusing. basically, this is how we can get the Destructible that we collided with
-        Destructible hitDestructible = collision.collider.GetComponent<Destructible>();
+        Destructible hitDestructible = collision.GetComponent<Destructible>();
         
         //it's possible that we don't have any Destructible at all, like if we hit something else
         if ( hitDestructible != null )

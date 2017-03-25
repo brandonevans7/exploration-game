@@ -15,6 +15,7 @@ public class AnimationOnTrigger : MonoBehaviour
 
     protected void Activate()
     {
+
         for ( int objIndex = 0; objIndex < animators.Length; objIndex++ )
         {
             animators[objIndex].SetTrigger( triggerName );

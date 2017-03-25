@@ -10,6 +10,8 @@ public class NavMeshPatroller : MonoBehaviour
 
     protected NavMeshAgent agent;
 
+	public float DistanceReqFromTarget = 0.0f;
+
     public void Awake ()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -22,7 +24,7 @@ public class NavMeshPatroller : MonoBehaviour
     
     public void Update ()
     {
-        if ( agent.remainingDistance <= 0.0f )
+		if ( agent.remainingDistance <= DistanceReqFromTarget )
         {
             PatrolTo( (pointIndex + 1) % patrolPoints.Length );
         }
